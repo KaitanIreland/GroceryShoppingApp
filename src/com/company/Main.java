@@ -41,13 +41,23 @@ public class Main {
                 costOfTrip=prices.get(i);
             }
         }
-        System.out.println("During the last visit to the grocery store, these items were purchased:" + "\n" + purchasedLast);
+        System.out.println("During the last visit to the grocery store, these item(s) were purchased:" + "\n" + purchasedLast);
 
         //What is the total price of items purchased on date [D]
         //I'm assuming date D is the most recent date
-        System.out.println("\nThe total cost of all of these items was:" + "\n" + "$" + costOfTrip);
+        System.out.println("\nThe total cost of all of these item(s) was:" + "\n" + "$" + costOfTrip);
 
 
-        //TODO How
+        //How many times was [A] purchased?
+        int count = 0;
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).contains(purchasedLast)) {
+                count = count + 1;
+            }
+        }
+        System.out.println("\n" + purchasedLast + " was purchased " + count + " time(s).");
+
+        //TODO What items were purchased that cost more than $10?
+
     }
 }
